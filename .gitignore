@@ -105,3 +105,6 @@ dist
 
 # Vscode configuration
 .vscode
+
+#Miscellaneous
+.DS_Store
