@@ -1,4 +1,5 @@
 import commonjs from "@rollup/plugin-commonjs"
+import copy from "rollup-plugin-copy"
 import del from "rollup-plugin-delete"
 import dts from "rollup-plugin-dts"
 import resolve from "@rollup/plugin-node-resolve"
@@ -26,6 +27,9 @@ export default [
       resolve(),
       terser(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      copy({
+        targets: [{ src: "package.json", dest: "dist" }],
+      }),
     ],
   },
   {
